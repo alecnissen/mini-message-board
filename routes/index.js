@@ -22,6 +22,22 @@ router.get('/', function(req, res, next) {
   
 });
 
+router.get('/new', function(req, res) { 
+  res.render('form');
+});
+
+// how to access the data from the form in here 
+
+router.post('/new', function(req, res) {
+  messages.push({text: req.body.userMsg, user: req.body.authorName, added: new Date()})
+
+  res.redirect(303, '/')
+})
+
+
+
+
+
 
 
 
